@@ -2,21 +2,12 @@ from re import sub
 
 
 def mod_fio(data):
-    for d in data:
-        if not d[2]:
-            name_surname = d[1].split(' ')
-            if len(name_surname) > 1:
-                i = 1
-                for n in name_surname:
-                    d[i] = n
-                    i += 1
-                continue
-            name_surname = d[0].split(' ')
-            if len(name_surname) > 1:
-                i = 0
-                for n in name_surname:
-                    d[i] = n
-                    i += 1
+    for d in data[1:]:
+        fio = ' '.join(d[0:3])
+        fio_list = fio.split(' ')
+        for i in fio_list:
+            d[fio_list.index(i)] = i
+
     return data
 
 
