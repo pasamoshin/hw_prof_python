@@ -3,3 +3,4 @@ __pycache__
 phonebook.csv
 parsing
 .web_scraping/application/vacancys.json
+vacancys.json
